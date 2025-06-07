@@ -19,6 +19,8 @@ const administratorSchema = new Schema({
         required: true,
         trim: true
     }
+},{
+    timestamps:true
 })
 
 const AdministratorSchema = mongoose.models.administrator || mongoose.model('administrator', administratorSchema);

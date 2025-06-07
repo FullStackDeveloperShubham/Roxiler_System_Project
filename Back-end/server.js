@@ -14,10 +14,12 @@ app.use(express.urlencoded({ extended: true }));
 // Importing routes
 import administratorRoutes from './Routes/administrator.route.js';
 import userRoutes from './Routes/user.route.js';
+import storeRoutes from './Routes/store.route.js';
 
 // routes configuration
 app.use('/api/',administratorRoutes)
 app.use('/api/user',userRoutes)
+app.use('/api/Store',storeRoutes)
 
 app.listen(PORT, async()=>{
      connectDB()
