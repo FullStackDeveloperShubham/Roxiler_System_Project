@@ -26,6 +26,9 @@ const createAdministrator = async (req, res) => {
         password:hashPassword
     });
 
+    // save into database
+    await newAdmin.save()
+
   res.status(201).json({
     message:"Administrator created successfully",
     success: true,
