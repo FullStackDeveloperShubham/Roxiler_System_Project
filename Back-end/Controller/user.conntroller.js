@@ -92,4 +92,23 @@ const getAllUsers = async (req,res)=>{
   }
 }
 
-export { createUser, updateUser , getAllUsers };
+// delete user 
+const deleteUser = async(req,res)=>{
+  try {
+    const { id } = req.params; 
+    const deleteUser = await User.findByIdAndDelete(id)
+    console.log(id)
+    res.status(201).json({
+      message:"User Deleted SuccessFully",
+      success:true,
+      deleteUser
+    })
+  } catch (error) {
+    res.status(401).json({
+      message:"Failed to delete store",
+      success:false,
+    })
+  }
+}
+
+export { createUser, updateUser , getAllUsers , deleteUser };
